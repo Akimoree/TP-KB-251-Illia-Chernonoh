@@ -14,13 +14,14 @@ num1 = float(input("Введіть перше число: "))
 op = input("Введіть операцію (+, -, *, /): ")
 num2 = float(input("Введіть друге число: "))
 
-if op == "+":
-    result = add(num1, num2)
-elif op == "-":
-    result = subtract(num1, num2)
-elif op == "*":
-    result = multiply(num1, num2)
-elif op == "/":
-    result = divide(num1, num2)
+match op:
+    case "+":
+        result = add(num1, num2)
+    case "-":
+        result = subtract(num1, num2)
+    case "*":
+        result = multiply(num1, num2)
+    case "/":
+        result = divide(num1, num2)
 
 print("Результат: " + str(result))
