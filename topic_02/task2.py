@@ -1,26 +1,29 @@
-def add(x, y):
-    return x + y
+def add(a, b):
+    return a + b
 
-def subtract(x, y):
-    return x - y
+def subtract(a, b):
+    return a - b
 
-def multiply(x, y):
-    return x * y
+def multiply(a, b):
+    return a * b
 
-def divide(x, y):
-    return x / y
+def divide(a, b):
+    return a / b
 
-num1 = float(input("Введіть перше число: "))
-op = input("Введіть операцію (+, -, *, /): ")
-num2 = float(input("Введіть друге число: "))
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+operation = input("Enter operation (+, -, *, /): ")
 
-if op == "+":
-    result = add(num1, num2)
-elif op == "-":
-    result = subtract(num1, num2)
-elif op == "*":
-    result = multiply(num1, num2)
-elif op == "/":
-    result = divide(num1, num2)
-
-print("Результат: " + str(result))
+if operation == "+":
+    print("Result =", add(a, b))
+elif operation == "-":
+    print("Result =", subtract(a, b))
+elif operation == "*":
+    print("Result =", multiply(a, b))
+elif operation == "/":
+    if b == 0:
+        print("Error: division by zero")
+    else:
+        print("Result =", divide(a, b))
+else:
+    print("Unknown operation")
