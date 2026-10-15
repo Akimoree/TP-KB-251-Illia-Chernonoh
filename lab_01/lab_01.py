@@ -1,6 +1,6 @@
 
 
-# already sorted list
+
 list = [
     {"name": "Bob", "phone": "0631234567", "email": "bob@gmail.com", "group": "KB-252"},
     {"name": "Emma", "phone": "0631234567", "email": "emma@gmail.com", "group": "KB-241"},
@@ -73,7 +73,7 @@ def updateElement():
     newEmail = input("Please enter new student email [" + oldItem["email"] + "]: ")
     newGroup = input("Please enter new student group [" + oldItem["group"] + "]: ")
 
-    # empty input means that the old value stays
+    
     if newName == "":
         newName = oldItem["name"]
     if newPhone == "":
@@ -85,8 +85,7 @@ def updateElement():
 
     newItem = {"name": newName, "phone": newPhone, "email": newEmail, "group": newGroup}
 
-    # delete the old element and insert the new one to the right position,
-    # so the list stays sorted even if the name was changed
+   
     del list[updatePosition]
     insertPosition = findInsertPosition(newName)
     list.insert(insertPosition, newItem)
