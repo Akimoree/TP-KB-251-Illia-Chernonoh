@@ -1,26 +1,32 @@
 import logging
 
+logger = logging.getLogger(__name__)
+
 
 def input_operation():
     while True:
         operation = input("Enter operation (+, -, *, /) or 'exit' to quit: ")
-        logging.info("Entered operation: " + operation)
         if operation.lower() == "exit":
+            logger.info("User entered: exit")
             return None
         if operation in ["+", "-", "*", "/"]:
+            logger.info(f"Entered operation: {operation}")
             return operation
         print("Unknown operation")
-        logging.warning("Unknown operation: " + operation)
+        logger.warning(f"Unknown operation: {operation}")
 
 
 def input_number(text):
     while True:
         value = input(text)
-        logging.info("Entered value: " + value)
         if value.lower() == "exit":
+            logger.info("User entered: exit")
             return None
         try:
-            return float(value)
+            number = float(value)
         except ValueError:
             print("Error: enter a number")
-            logging.warning("Wrong number: " + value)
+            logger.warning(f"Wrong number: {value}")
+            continue
+        logger.info(f"Entered number: {number}")
+        return number
